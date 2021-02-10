@@ -1,0 +1,292 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x67165F235D1166ED",
+      "device": "xc7z020clg400-1",
+      "name": "design_tb",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "axi4stream_vip_0": "",
+      "axi4stream_vip_1": "",
+      "popcnt_0": ""
+    },
+    "ports": {
+      "ACLK_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "ARESET_0:ARESETN_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_tb_ACLK_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "ARESETN_0": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "axi4stream_vip_0": {
+        "vlnv": "xilinx.com:ip:axi4stream_vip:1.1",
+        "xci_name": "design_tb_axi4stream_vip_0_0",
+        "xci_path": "ip/design_tb_axi4stream_vip_0_0/design_tb_axi4stream_vip_0_0.xci",
+        "inst_hier_path": "axi4stream_vip_0",
+        "parameters": {
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "INTERFACE_MODE": {
+            "value": "MASTER"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "4"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        }
+      },
+      "axi4stream_vip_1": {
+        "vlnv": "xilinx.com:ip:axi4stream_vip:1.1",
+        "xci_name": "design_tb_axi4stream_vip_0_1",
+        "xci_path": "ip/design_tb_axi4stream_vip_0_1/design_tb_axi4stream_vip_0_1.xci",
+        "inst_hier_path": "axi4stream_vip_1",
+        "parameters": {
+          "INTERFACE_MODE": {
+            "value": "SLAVE"
+          }
+        }
+      },
+      "popcnt_0": {
+        "vlnv": "xilinx.com:module_ref:popcnt:1.0",
+        "xci_name": "design_tb_popcnt_0_0",
+        "xci_path": "ip/design_tb_popcnt_0_0/design_tb_popcnt_0_0.xci",
+        "inst_hier_path": "popcnt_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "popcnt",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "M": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_tb_ACLK_0",
+                "value_src": "default_prop"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "M_TDATA",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "M_TVALID",
+                "direction": "O"
+              },
+              "TREADY": {
+                "physical_name": "M_TREADY",
+                "direction": "I"
+              }
+            }
+          },
+          "S": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "4",
+                "value_src": "constant"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_tb_ACLK_0",
+                "value_src": "default_prop"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "S_TDATA",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "S_TVALID",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "S_TREADY",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M:S",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "ARESETN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_tb_ACLK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "ARESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "popcnt_0_M": {
+        "interface_ports": [
+          "popcnt_0/M",
+          "axi4stream_vip_1/S_AXIS"
+        ]
+      },
+      "axi4stream_vip_0_M_AXIS": {
+        "interface_ports": [
+          "axi4stream_vip_0/M_AXIS",
+          "popcnt_0/S"
+        ]
+      }
+    },
+    "nets": {
+      "ACLK_0_1": {
+        "ports": [
+          "ACLK_0",
+          "axi4stream_vip_0/aclk",
+          "axi4stream_vip_1/aclk",
+          "popcnt_0/ACLK"
+        ]
+      },
+      "ARESET_0_1": {
+        "ports": [
+          "ARESETN_0",
+          "axi4stream_vip_0/aresetn",
+          "axi4stream_vip_1/aresetn",
+          "popcnt_0/ARESETN"
+        ]
+      }
+    }
+  }
+}
