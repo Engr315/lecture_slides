@@ -1,0 +1,38 @@
+#CC := arm-none-eabi-gcc
+
+CC 		:= gcc
+AS 		:= as
+LD		:= ld
+OBJDUMP :=	objdump
+
+.PHONY:  all
+all: program.dis
+
+#
+# -S:  output assembly file
+# -g:  Keep debug information
+# -O0:  Optimization level 0
+main.s:  main.c
+	$(CC) -g -O0 -S main.c 
+
+# -g:  Keep debug information
+# -c:  output linkable binary file
+main.o: main.s
+	$(AS) main.s -o main.o 
+	#$(CC) -c main.s  
+
+# 
+# skip the assembly step
+foo.o: foo.c
+	$(CC) -g -c foo.c > foo.o 
+
+program.elf:  main.o foo.o 
+	#$(LD) main.o foo.o -o program.elf
+	$(CC) main.o foo.o -o program.elf
+
+program.dis: program.elf
+	$(OBJDUMP) --disassemble-all program.elf > program.dis
+
+.PHONY: clean
+clean:
+	rm -rf main.s main.o foo.o program.elf program.dis
