@@ -1,0 +1,7 @@
+cPopcount.c
+popcount.c
+setup.py
+cPopcount.egg-info/PKG-INFO
+cPopcount.egg-info/SOURCES.txt
+cPopcount.egg-info/dependency_links.txt
+cPopcount.egg-info/top_level.txt
